@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betfair Control Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<!-- MENU -->
+<aside class="menu">
+    <h2>🎯 Betfair</h2>
+    <ul>
+        <li class="ativo">📊 Dashboard</li>
+        <li>📝 Nova aposta</li>
+        <li>📜 Histórico</li>
+        <li>📈 Estatísticas</li>
+        <li>💰 Banca</li>
+        <li>⚙ Configurações</li>
+    </ul>
+</aside>
+<!-- CONTEÚDO -->
+<main class="conteudo">
+    <!-- DASHBOARD -->
+    <section class="cards">
+        <div class="card">
+            <h3>💰 Lucro Total</h3>
+            <span id="lucroTotal">R$ 0,00</span>
+        </div>
+        <div class="card">
+            <h3>📈 ROI</h3>
+            <span id="roi">0%</span>
+        </div>
+        <div class="card">
+            <h3>🟢 Greens</h3>
+            <span id="greens">0</span>
+        </div>
+        <div class="card">
+            <h3>🔴 Reds</h3>
+            <span id="reds">0</span>
+        </div>
+        <div class="card">
+            <h3>🎯 Win Rate</h3>
+            <span id="winrate">0%</span>
+        </div>
+        <div class="card">
+            <h3>💵 Banca Atual</h3>
+            <span id="bancaAtual">R$ 0,00</span>
+        </div>
+    </section>
+    <!-- NOVA APOSTA -->
+    <section class="bloco" data-secao="nova">
+        <h2>📝 Nova Aposta</h2>
+        <input type="date" id="data">
+        <select id="entrada">
+            <option>Lay 0x2</option>
+            <option>Lay Empate</option>
+            <option>Lay Casa</option>
+            <option>Lay Visitante</option>
+            <option>Over 2.5</option>
+            <option>Under 2.5</option>
+        </select>
+        <input type="text" id="mercado" placeholder="Jogo / Mercado">
+        <input type="number" id="stake" placeholder="Stake">
+        <input type="number" id="odd" step="0.01" placeholder="Odd">
+        <select id="resultado">
+            <option value="Green">🟢 Green</option>
+            <option value="Red">🔴 Red</option>
+        </select>
+        <div id="campoRed" style="display:none;">
+            <input type="number" id="valorRed" placeholder="Valor do Cash Out">
+        </div>
+        <button id="salvar">Salvar Aposta</button>
+    </section>
+    <!-- HISTÓRICO -->
+    <section class="bloco" data-secao="historico">
+        <h2>📜 Histórico</h2>
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Entrada</th>
+                    <th>Mercado</th>
+                    <th>Stake</th>
+                    <th>Odd</th>
+                    <th>Resultado</th>
+                    <th>Lucro</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <!-- ESTATÍSTICAS -->
+    <section class="bloco" data-secao="estatisticas">
+        <h2>📈 Estatísticas</h2>
+        <p>Maior Green: <strong id="maiorGreen">R$ 0,00</strong></p>
+        <p>Maior Red: <strong id="maiorRed">R$ 0,00</strong></p>
+    </section>
+    <!-- BANCA -->
+    <section class="bloco" data-secao="banca">
+        <h2>💰 Banca</h2>
+        <input type="number" id="bancaInicial" placeholder="Banca inicial">
+        <button id="salvarBanca">Salvar</button>
+    </section>
+    <!-- CONFIG -->
+    <section class="bloco" data-secao="config">
+        <h2>⚙ Configurações</h2>
+        <input type="number" id="comissao" placeholder="Comissão (%)">
+        <button id="salvarBanca">Salvar</button>
+    </section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
